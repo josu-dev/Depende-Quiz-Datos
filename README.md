@@ -1,38 +1,59 @@
-# create-svelte
+# Depende Quiz Datos
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+A simple quiz game to test if you really know about "Fundamentos de Organizacion de Datos" and "Diseño de Base de Datos"
+or if it's just a matter of the questions being about the few topics you know.
 
-## Creating a project
+Available at [josu-dev.github.io/Depende-Quiz-Datos](https://josu-dev.github.io/Depende-Quiz-Datos/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Disclaimer
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+The quiz can be either about "Fundamentos de Organizacion de Datos" or "Diseño de Base de Datos". Each quiz has a set of multiple choice questions with only one is supposed to be correct. The Data for each set was taken from different sources and is not guaranteed to be accurate.
 
-# create a new project in my-app
-npm create svelte@latest my-app
+## Contributing
+
+To contribute with a new quiz or to add/correct existing questions feel free to open a pull request. The sets of questions are stored in the [src/lib/content/](./src/lib/content/) directory where each file represents a different quiz. The format for the questions is as follows:
+
+```json
+[
+  {
+    "sentence": "Un checkPoint en ambientes concurrentes", // The question text
+    "options": [
+      [
+        "a", // The option index (a, b, c, d, e, f, g...) that will be used to match the answer
+        "Solo se genera si se utiliza el protocolo de HDE" // The option text
+      ],
+      [
+        "b",
+        "Solo se genera si se utiliza el protocolo de dos fases"
+      ],
+      [
+        "c",
+        "Se aplica en el protocolo de doble paginación"
+      ],
+      [
+        "d",
+        "Se coloca siempre entre dos transacciones, cuando ninguna esta activa"
+      ],
+      [
+        "e",
+        "Todas las anteriores"
+      ],
+      [
+        "f",
+        "Algunas de las anteriores"
+      ],
+      [
+        "g",
+        "Ninguna de las anteriores"
+      ]
+    ],
+    "answers": [  // The correct answer/s (valid values are the option indexes defined above, any text or an empty array)
+      "g"
+    ]
+  }
+]
 ```
 
-## Developing
+## License
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+[MIT](./LICENSE)
