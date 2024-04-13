@@ -46,7 +46,7 @@
   {#if !isPlaying}
     <div in:blur class="flex flex-col items-center">
       <h2 class="text-4xl text-pretty text-center text-accent font-semibold">
-        Si sabes madale mecha,<br />sino, tambien <span class="inline-block hover:animate-shake">😶‍🌫️</span>
+        Si sabes mandale mecha,<br />sino, tambien <span class="inline-block hover:animate-shake">😶‍🌫️</span>
       </h2>
       <div class="flex flex-col gap-2 mt-6 lg:mt-8">
         <Button
@@ -62,7 +62,7 @@
           effect="3d"
           class="text-primary-muted hover:text-primary"
         >
-          Diseño Base de Datos
+          Diseño de Base de Datos
         </Button>
       </div>
     </div>

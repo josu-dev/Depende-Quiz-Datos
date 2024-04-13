@@ -30,7 +30,7 @@
   </h1>
   <h2 class="text-2xl text-pretty text-center text-primary mt-[0.75em]">
     {#if is400}
-      {#if $page.status === 404}
+      {#if is404}
         No existe la pagina <span
           class="px-1.5 leading-loose break-words rounded ring-2 ring-current bg-[color-mix(in_srgb,currentColor_10%,transparent)]"
           >'{pageUrl}'</span
