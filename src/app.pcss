@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* colors https://github.com/shadcn-ui/ui/issues/669 */
+    --neutral-50: 0 0% 98%;
+    --neutral-100: 0 0% 96.1%;
+    --neutral-200: 0 0% 89.8%;
+    --neutral-300: 0 0% 83.1%;
+    --neutral-400: 0 0% 63.9%;
+    --neutral-500: 0 0% 45.1%;
+    --neutral-600: 0 0% 32.2%;
+    --neutral-700: 0 0% 25.1%;
+    --neutral-800: 0 0% 14.9%;
+    --neutral-900: 0 0% 9%;
+    --neutral-950: 0 0% 3.9%;
+
+    /* light theme */
+    --bg-gradient-0: hsl(278, 35%, 78%);
+    --bg-gradient-1: hsl(338, 100%, 84%);
+    --bg-gradient-2: hsl(337, 100%, 89%);
+    --bg-gradient-3: hsl(208, 97%, 87%);
+    --bg-gradient-4: hsl(209, 100%, 82%);
+
+    --color-accent: 0 0% 2%;
+    --color-primary: 0 0% 6%;
+    --color-primary-muted: 0 0% 16%;
+    --color-secondary: 0 0% 14.9%;
+    --color-secondary-muted: 0 0% 10%;
+    --color-tertiary: 0 0% 25.1%;
+    --color-info: 0 0% 5%;
+    --color-success: 0 0% 10%;
+    --color-warning: 0 0% 10%;
+    --color-error: 0 72.2% 50.6%;
+  }
+
+  :root.dark * {
+    /* dark theme */
+    --bg-gradient-0: hsl(278, 35%, 08%);
+    --bg-gradient-1: hsl(337, 100%, 19%);
+    --bg-gradient-2: hsl(338, 100%, 14%);
+    --bg-gradient-3: hsl(208, 97%, 17%);
+    --bg-gradient-4: hsl(209, 100%, 12%);
+
+    --color-accent: 0 0% 98%;
+    --color-primary: 0 0% 94%;
+    --color-primary-muted: 0 0% 84%;
+    --color-secondary: 0 0% 89.8%;
+    --color-secondary-muted: 0 0% 63.9%;
+    --color-tertiary: 0 0% 45.1%;
+    --color-info: 0 0% 5%;
+    --color-success: 0 0% 10%;
+    --color-warning: 0 0% 10%;
+    --color-error: 0 72.2% 50.6%;
+  }
+
+  html {
+    height: 100%;
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 0%;
+    }
+
+    100% {
+      background-position: 100% 100%;
+    }
+
+    200% {
+      background-position: 200% 200%;
+    }
+  }
+
+  body {
+    height: 100%;
+    background-image: linear-gradient(to bottom,
+      var(--bg-gradient-0),
+      var(--bg-gradient-1),
+      var(--bg-gradient-2),
+      var(--bg-gradient-3),
+      var(--bg-gradient-4),
+      var(--bg-gradient-0),
+      var(--bg-gradient-1));
+    background-size: 700% 700%;
+    animation: gradient 30s linear infinite reverse;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-Black.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-BlackItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 800;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-ExtraBoldItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-BoldItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-SemiBoldItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-MediumItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-Italic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-LightItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 200;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-ExtraLightItalic.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 100;
+    font-display: swap;
+    src: url('/fonts/Poppins/Poppins-ThinItalic.ttf') format('truetype');
+  }
+}
+
+@layer components {
+  .underline-on {
+    position: relative;
+  }
+  .underline-on::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--undeline-color, currentColor);
+    transform: scaleX(0);
+    transition: transform 0.25s ease-out;
+  }
+  .underline-on-hover::before {
+    transform: scaleX(1);
+  }
+
+  .btn,
+  .btn-md{
+    @apply px-3 py-2 rounded font-semibold;
+  }
+  .btn-sm {
+    @apply px-2 py-1.5 rounded font-medium;
+  }
+  .btn-lg {
+    @apply px-4 py-3 rounded font-semibold;
+  }
+}
