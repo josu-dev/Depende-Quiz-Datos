@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from "$lib/comps/Button.svelte";
+  import Disclaimer from "$lib/comps/Disclaimer.svelte";
   import EmojiRain from "$lib/comps/EmojiRain.svelte";
   import MultipleChoice from "$lib/comps/MultipleChoice.svelte";
   import PageMain from "$lib/comps/PageMain.svelte";
@@ -39,6 +40,8 @@
   }}
 />
 
+<Disclaimer />
+
 <EmojiRain counter={emojiCounter} />
 
 <PageMain class="relative justify-center">
@@ -46,7 +49,7 @@
   {#if !isPlaying}
     <div in:blur class="flex flex-col items-center">
       <h2 class="text-4xl text-pretty text-center text-accent font-semibold">
-        Si sabes mandale mecha,<br />sino, tambien <span class="inline-block hover:animate-shake">😶‍🌫️</span>
+        Si sabes mandale mecha,<br />sino, tambien <span class="inline-block hover:animate-shake select-none">😶‍🌫️</span>
       </h2>
       <div class="flex flex-col gap-2 mt-6 lg:mt-8">
         <Button
