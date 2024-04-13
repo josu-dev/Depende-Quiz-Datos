@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import { page } from "$app/stores";
   import { DEFAULT_SEO } from "$lib/constants.js";
 
@@ -78,6 +79,10 @@
 
   export let seo: Props;
 
+  function safe_local_url(url: string) {
+    return url.startsWith("/") ? base + url : url;
+  }
+
   const {
     canonical = "current",
     charset = "utf-8",
@@ -107,7 +112,7 @@
   <title>{title_to_render}</title>
   <meta name="description" content={description} />
   <link rel="canonical" href={canonical === "current" ? currentUrl : canonical} />
-  <link rel="icon" href={icon} />
+  <link rel="icon" href={safe_local_url(icon)} />
   <meta name="robots" content={robots} />
   <meta name="generator" content="SvelteKit" />
   {#if themeColor}
@@ -120,9 +125,9 @@
   <meta property="og:description" content={description} />
   <meta property="og:locale" content={locale} />
   {#if image}
-    <meta property="og:image" content={image.url} />
+    <meta property="og:image" content={safe_local_url(image.url)} />
     {#if image.urlSecure}
-      <meta property="og:image:secure_url" content={image.urlSecure} />
+      <meta property="og:image:secure_url" content={safe_local_url(image.urlSecure)} />
     {/if}
     <meta property="og:image:alt" content={image.alt} />
     <meta property="og:image:width" content={image.width} />
