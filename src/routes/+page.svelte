@@ -3,6 +3,7 @@
   import EmojiRain from "$lib/comps/EmojiRain.svelte";
   import MultipleChoice from "$lib/comps/MultipleChoice.svelte";
   import PageMain from "$lib/comps/PageMain.svelte";
+  import Seo from "$lib/comps/SEO.svelte";
   import DBDMultipleChoices from "$lib/content/dbd_multiple_choices.json";
   import FODMultipleChoices from "$lib/content/fod_multiple_choices.json";
   import { createChoiceStore, createCounterStore, type ChoiceStore } from "$lib/stores.js";
@@ -30,6 +31,13 @@
     emojiCounter.reset();
   }
 </script>
+
+<Seo
+  seo={{
+    description:
+      "Pon a prueba tus conocimientos sobre 'Fundamentos de Organizacion de Datos' y 'Diseño de Base de Datos' con un quiz que te pondra a pensar y repensar lo que pensabas que sabias.",
+  }}
+/>
 
 <EmojiRain counter={emojiCounter} />
 

@@ -2,21 +2,27 @@
   import { page } from "$app/stores";
   import Button from "$lib/comps/Button.svelte";
   import PageMain from "$lib/comps/PageMain.svelte";
+  import Seo from "$lib/comps/SEO.svelte";
 
   $: is400 = $page.status >= 400 && $page.status < 500;
   $: is404 = $page.status === 404;
   $: is500 = $page.status >= 500;
 
   $: pageUrl = $page.url.host + $page.url.pathname;
-
-  $: title = is400
-    ? is404
-      ? "404 No encontrado"
-      : "Error del cliente"
-    : is500
-      ? "Error del servidor"
-      : "Error desconocido";
 </script>
+
+<Seo
+  seo={{
+    title: `Error ${$page.status}`,
+    description: is400
+      ? is404
+        ? `No existe la pagina '${pageUrl}'`
+        : "Error en la solicitud realizada, intente de nuevo"
+      : is500
+        ? "Error por parte del servidor al procesar la solicitud"
+        : "Error desconocido al procesar la solicitud",
+  }}
+/>
 
 <PageMain class="relative justify-center">
   <h1 class="text-6xl text-pretty text-center text-accent font-bold">
@@ -41,9 +47,7 @@
   <div class="flex flex-col mt-16">
     <p class="text-lg text-primary-muted mt-[0.75em] text-center">
       Puedes regresar a la
-      <Button href="/" effect="3d" class="inline-block btn-sm hover:text-primary">
-        pagina principal
-      </Button>
+      <Button href="/" effect="3d" class="inline-block btn-sm hover:text-primary">pagina principal</Button>
     </p>
   </div>
 </PageMain>
