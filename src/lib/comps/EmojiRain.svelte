@@ -4,6 +4,7 @@
 
   export let counter: CounterStore;
 
+  const EMOJI_DROP_FACTOR = 0.4;
   const EMOJI_DUPLICATION_STEP = 2;
 
   type Emoji = {
@@ -25,7 +26,7 @@
   function loop() {
     const new_emojis = [];
     for (const emoji of emojis) {
-      emoji.y += 0.5 * emoji.z;
+      emoji.y += EMOJI_DROP_FACTOR * emoji.z;
       if (emoji.y > 110) {
         continue;
       }
@@ -46,52 +47,34 @@
     const new_length =
       emojis.length +
       Math.pow(2, Math.floor((state === "RESETED" ? counter.getLastValue() : $counter.value) / EMOJI_DUPLICATION_STEP));
+
     const new_emojis: Emoji[] = new Array(new_length);
-    for (let i = 0; i < new_length; i++) {
+
+    for (let i = 0; i < emojis.length; i++) {
+      new_emojis[i] = emojis[i];
+    }
+
+    for (let i = emojis.length; i < new_length; i++) {
       new_emojis[i] = {
         character:
-          state === "INCREMENTED" ? characters.correct : state === "EQUAL" ? characters.unknown : characters.bad,
-        x: Math.random() * 100,
+          state === "INCREMENTED" ? characters.correct : state === "RESETED" ? characters.bad : characters.unknown,
+        x: 2 + Math.random() * 96,
         y: Math.random() * -10,
-        z: 0.1 + Math.random() * 1,
+        z: 0.1 + Math.random() * 0.9,
       };
-      for (let j = i; j > 0; j--) {
-        if (new_emojis[j].z < new_emojis[j - 1].z) {
-          const temp = new_emojis[j];
-          new_emojis[j] = new_emojis[j - 1];
-          new_emojis[j - 1] = temp;
+    }
+
+    for (let i = 0; i < new_emojis.length; i++) {
+      for (let j = i + 1; j < new_emojis.length; j++) {
+        if (new_emojis[i].z < new_emojis[j].z) {
+          const temp = new_emojis[i];
+          new_emojis[i] = new_emojis[j];
+          new_emojis[j] = temp;
         }
       }
     }
-    emojis = new_emojis;
 
-    // emojis = [
-    //   ...emojis,
-    //   ...new Array(
-    //     Math.pow(
-    //       2,
-    //       Math.floor(
-    //         (state === "RESETED" ? counter.getLastValue() : $counter.value) /
-    //           EMOJI_DUPLICATION_STEP
-    //       )
-    //     )
-    //   )
-    //     .fill(null)
-    //     .map((_) => {
-    //       return {
-    //         character:
-    //           state === "INCREMENTED"
-    //             ? characters.correct
-    //             : state === "EQUAL"
-    //             ? characters.unknown
-    //             : characters.bad,
-    //         x: Math.random() * 100,
-    //         y: Math.random() * -10,
-    //         r: 0.1 + Math.random() * 1,
-    //       };
-    //     })
-    //     .sort((a, b) => a.r - b.r),
-    // ];
+    emojis = new_emojis;
     cancelAnimationFrame(frame);
     loop();
   }
