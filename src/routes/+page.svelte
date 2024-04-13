@@ -70,18 +70,20 @@
       </div>
     </div>
   {:else}
-    <div in:scale class="flex flex-col items-center gap-2">
-      <MultipleChoice
-        name={currentChoiceName}
-        choice={currentChoiceStore}
-        onBadAnswer={() => emojiCounter.reset()}
-        onGoodAnswer={() => emojiCounter.increment()}
-        onNoAnswer={() => emojiCounter.set($emojiCounter)}
-        onSkip={() => {}}
-      />
-    </div>
-    <div class="absolute bottom-0 right-0">
-      <Button onClick={handleGotoStart} effect="3d" class="text-primary-muted hover:text-primary">Inicio</Button>
+    <div class="flex-1 flex flex-col">
+      <div in:scale class="flex flex-col items-center gap-2 overflow-hidden my-auto">
+        <MultipleChoice
+          name={currentChoiceName}
+          choice={currentChoiceStore}
+          onBadAnswer={() => emojiCounter.reset()}
+          onGoodAnswer={() => emojiCounter.increment()}
+          onNoAnswer={() => emojiCounter.set($emojiCounter)}
+          onSkip={() => {}}
+        />
+      </div>
+      <div class="self-end">
+        <Button onClick={handleGotoStart} effect="3d" class="text-primary-muted hover:text-primary mt-2">Inicio</Button>
+      </div>
     </div>
   {/if}
 </PageMain>

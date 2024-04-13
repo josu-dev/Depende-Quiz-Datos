@@ -85,7 +85,7 @@
   }
 </script>
 
-<h2 class="text-4xl text-pretty text-center text-accent font-semibold">
+<h2 class="text-4xl mt-[0.75em] text-pretty text-center text-accent font-semibold">
   Quiz: {name ? ` '${name}'` : ""}
 </h2>
 <ChoiceContent
