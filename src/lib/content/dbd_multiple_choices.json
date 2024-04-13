@@ -37,10 +37,11 @@
     ],
     "answers": [
       "f"
-    ]
+    ],
+    "verified": true
   },
   {
-    "sentence": "Un checkPoint en ambientes concurrentes",
+    "sentence": "Un checkpoint en ambientes concurrentes",
     "options": [
       [
         "a",
@@ -73,7 +74,8 @@
     ],
     "answers": [
       "g"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "La propiedad de aislamiento",
@@ -105,7 +107,8 @@
     ],
     "answers": [
       "e"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Se tiene una jerarquía `total exclusiva` en el modelo conceptual. Al pasar dicho modelo al lógico se debe decidir qué hacer con la misma",
@@ -137,7 +140,8 @@
     ],
     "answers": [
       "d"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Una dependencia multivaluada",
@@ -241,7 +245,8 @@
     ],
     "answers": [
       "e"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "La siguiente consulta SQL: SELECT * FROM B INNER JOIN A ON (A.id = B.id)",
@@ -357,7 +362,8 @@
     ],
     "answers": [
       "b"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Si una entrada en el registro bitácora tiene el siguiente formato: \"<T1, dato, valor anterior, valor nuevo>\"",
@@ -437,7 +443,8 @@
     ],
     "answers": [
       "g"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Una jerarquía con cobertura Parcial y Exclusiva (P, E), al pasar al modelo lógico",
@@ -653,7 +660,8 @@
     ],
     "answers": [
       "b"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Cuál de las siguientes afirmaciones es verdadera sobre el modelo Entidad-Relación(ER)?",
@@ -689,7 +697,8 @@
     ],
     "answers": [
       "c"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Cuál de las siguientes técnicas es útil para optímizar consultas SQL en una base de datos?",
@@ -761,7 +770,8 @@
     ],
     "answers": [
       "b"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Cuál de las siguientes afirmaciones es cierta acerca de la integridad referencial en una base de datos relacional?",
@@ -833,7 +843,8 @@
     ],
     "answers": [
       "a"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Cuáles de las siguientes cláusulas son necesarias para una consulta de selección de datos en SQL?",
@@ -865,7 +876,8 @@
     ],
     "answers": [
       "e"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Qué afirmación describe mejor la relacion entre la cantidad de tuplas o filas generadas por las cláusulas LEFT JOIN e INNER JOIN en una consulta SQL?",
@@ -901,7 +913,8 @@
     ],
     "answers": [
       "d"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Cuál de las siguientes afirmaciones es verdadera acerca de las tablas en una base de datos?",
@@ -937,7 +950,8 @@
     ],
     "answers": [
       "a"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Qué significa la condición de idempotencia en el contexto de las transacciones en una base de datos?",
@@ -969,7 +983,8 @@
     ],
     "answers": [
       "e"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "ia con cobertura Parcial y Exclusiva (P, E), al pasar al modelo lógico",
@@ -1608,8 +1623,9 @@
       ]
     ],
     "answers": [
-      "f no existen las entidades en el modelo fisico"
-    ]
+      "f"
+    ],
+    "verified": true
   },
   {
     "sentence": "Una relación recursiva en el esquema lógico",
@@ -1641,7 +1657,8 @@
     ],
     "answers": [
       "c"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "de relaciones en el esquema conceptual",
@@ -1669,7 +1686,8 @@
     ],
     "answers": [
       "a"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Un atributo derivado",
@@ -1697,7 +1715,8 @@
     ],
     "answers": [
       "b"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "La operación de proyección en Álgebra Relacional",
@@ -1817,7 +1836,8 @@
     ],
     "answers": [
       "b"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Si en una consulta SQL se utiliza la cláusula GROUP BY",
@@ -1849,7 +1869,8 @@
     ],
     "answers": [
       "c"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "En algebra relacional la empresa A |x| B da el mismo resultado que",
@@ -1877,7 +1898,8 @@
     ],
     "answers": [
       "c"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "En el algebra relacional la expresión A - B",
@@ -2021,7 +2043,8 @@
     ],
     "answers": [
       "b"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Cuál de las siguientes afirmaciones es verdadera sobre el modelo Entidad-Relación (ER)?",
@@ -2057,7 +2080,8 @@
     ],
     "answers": [
       "c"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Cuál de las siguientes técnicas es útil para optimizar consultas SQL en una base de datos?",
@@ -2161,7 +2185,8 @@
     ],
     "answers": [
       "f"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Si en una consulta SQL se utiliza la cláusula EXISTS",
@@ -2193,7 +2218,8 @@
     ],
     "answers": [
       "f"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Una transacción que alcanza el estado de parcialmente cometida",
@@ -2221,7 +2247,8 @@
     ],
     "answers": [
       "e"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Un checkpoint",
@@ -2253,7 +2280,8 @@
     ],
     "answers": [
       "f"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "El diseño conceptual de una Base de Datos",
@@ -2285,7 +2313,8 @@
     ],
     "answers": [
       "f"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Una entidad en el esquema físico",
@@ -2317,7 +2346,8 @@
     ],
     "answers": [
       "e"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Una relación recursiva en el esquema lógico",
@@ -2349,7 +2379,8 @@
     ],
     "answers": [
       "c"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Un ciclo de relaciones en el esquema conceptual",
@@ -2377,7 +2408,8 @@
     ],
     "answers": [
       "a"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "La técnica de bitácora en transacciones",
@@ -2401,7 +2433,8 @@
     ],
     "answers": [
       "c"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Un atributo opcional monovalente en una entidad del modelo conceptual, cuando se realiza el pasaje al lógico",
@@ -2429,7 +2462,8 @@
     ],
     "answers": [
       "e"
-    ]
+    ],
+    "verified": true
   },
   {
     "sentence": "Una clave foránea en el modelo físico",

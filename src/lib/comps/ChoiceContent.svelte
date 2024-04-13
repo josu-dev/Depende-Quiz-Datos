@@ -5,6 +5,7 @@
   export let sentence: string;
   export let options: string[][];
   export let answers: string[];
+  export let verified: boolean | undefined = false;
   export let selected = "";
   export let showAnswers = false;
   export let onSelected: (index: string) => void;
@@ -51,7 +52,9 @@
       {#if showAnswers}
         <div class="container" in:slide>
           <h4 class="text-lg font-medium text-primary mt-[0.75em]">
-            {answers.length > 1 ? "Posibles respuestas:" : "Posible respuesta:"}
+            {answers.length > 1
+              ? `Respuestas${verified ? " (verificadas)" : ""}`
+              : `Respuesta${verified ? " (verificada)" : ""}`}
           </h4>
           <ul class="ml-1 mt-1 font-medium flex space-x-4">
             {#each answers as answer}

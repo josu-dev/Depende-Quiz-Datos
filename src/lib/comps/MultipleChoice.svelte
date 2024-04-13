@@ -7,6 +7,7 @@
     sentence: string;
     options: string[][];
     answers: string[];
+    verified?: boolean;
   };
 
   export let name: string;

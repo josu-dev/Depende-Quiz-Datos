@@ -61,13 +61,11 @@ export function createChoiceStore<T>(choices: T[], initialIdx: number = 0) {
   function next() {
     current_idx = (current_idx + 1) % choices.length;
     set(choices[current_idx]);
-    console.log('next', current_idx);
   }
 
   function prev() {
     current_idx = (current_idx - 1 + choices.length) % choices.length;
     set(choices[current_idx]);
-    console.log('prev', current_idx, choices[current_idx]);
   }
 
   return {
